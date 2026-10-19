@@ -18,6 +18,13 @@
         android:text="Is Ramot Menashe a great place"
         android:textSize="24sp" />
 
+    <TextView
+        android:id="@+id/tvExplanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="השאלה הזו מראה כמה את/ה איכותי"
+        android:gravity="center"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

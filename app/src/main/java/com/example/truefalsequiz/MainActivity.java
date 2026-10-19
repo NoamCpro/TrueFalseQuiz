@@ -1,5 +1,6 @@
 package com.example.truefalsequiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    boolean correctAnswer = true;
+    String exp = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,22 @@ public class MainActivity extends AppCompatActivity {
         btnTrue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "בחרת אמת", Toast.LENGTH_SHORT).show();
+                boolean userAnswer = true;
+
+                boolean isCorrect;
+                if (userAnswer == correctAnswer) {
+                    isCorrect = true;
+                    exp = "אתה איש איכותי. ברור שרמות מנשה מקום מקסים";
+                } else {
+                    isCorrect = false;
+                    exp = "יש לך עוד כמה דברים ללמוד. רמות מנשה אלופים";
+                }
+
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                intent.putExtra("isCorrect", isCorrect);
+                intent.putExtra("explanation", exp);
+                intent.putExtra("hasNext", true);
+                startActivity(intent);
             }
         });
 
@@ -36,7 +54,23 @@ public class MainActivity extends AppCompatActivity {
         btnFalse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "בחרת שקר", Toast.LENGTH_SHORT).show();
+                boolean userAnswer = false;
+
+
+                boolean isCorrect;
+                if (userAnswer == correctAnswer) {
+                    isCorrect = true;
+                    exp = "אתה איש איכותי. ברור שרמות מנשה מקום מקסים";
+                } else {
+                    isCorrect = false;
+                    exp = "יש לך עוד כמה דברים ללמוד. רמות מנשה אלופים";
+                }
+
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                intent.putExtra("isCorrect", isCorrect);
+                intent.putExtra("explanation", exp);
+                intent.putExtra("hasNext", true);
+                startActivity(intent);
             }
         });
     }
