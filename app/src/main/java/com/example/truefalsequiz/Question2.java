@@ -45,6 +45,7 @@ public class Question2 extends AppCompatActivity {
                 Intent intent = new Intent(Question2.this, ResultActivity.class);
                 intent.putExtra("isCorrect", isCorrect);
                 intent.putExtra("explanation", exp);
+                intent.putExtra("hasNext", false);
                 startActivity(intent);
             }
         });
@@ -68,6 +69,7 @@ public class Question2 extends AppCompatActivity {
                 Intent intent = new Intent(Question2.this, ResultActivity.class);
                 intent.putExtra("isCorrect", isCorrect);
                 intent.putExtra("explanation", exp);
+                intent.putExtra("hasNext", false);
                 startActivity(intent);
             }
         });

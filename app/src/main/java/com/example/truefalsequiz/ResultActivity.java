@@ -67,7 +67,7 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ResultActivity.this, Question2.class);
-                intent.putExtra("hasNext", true);
+                intent.putExtra("hasNext", false);
                 startActivity(intent);
             }
         });
